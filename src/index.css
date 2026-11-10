@@ -1377,7 +1377,7 @@ a:focus-visible {
   .about-grid,
   .contact-grid,
   .detail-grid {
-    grid-template-columns: 1fr;
+    grid-template-columns: minmax(0, 1fr);
   }
   .hero {
     padding-top: 44px;
@@ -1500,5 +1500,20 @@ a:focus-visible {
 @media (max-width: 640px) {
   .contact-links-grid {
     grid-template-columns: 1fr;
+  }
+}
+
+.hero-grid > *,
+.about-grid > *,
+.detail-grid > * {
+  min-width: 0;
+}
+
+@media (max-width: 880px) {
+  .code-card {
+    max-width: 100%;
+  }
+  .code-card pre {
+    font-size: 0.7rem;
   }
 }
